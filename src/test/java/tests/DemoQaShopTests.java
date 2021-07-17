@@ -68,5 +68,7 @@ public class DemoQaShopTests {
 
         String expectedTitle = (productPage.getProductName()).toUpperCase();
         cartPage.verifyThatProductIsInTheCart(expectedTitle);
+
+        System.out.println();
     }
 }
