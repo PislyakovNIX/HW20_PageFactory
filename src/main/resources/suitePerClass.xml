@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite With Classes" >
+    <test name="org.pislyakov" >
+        <classes>
+
+            <class name="tests.DemoQaShopTests"/>
+
+        </classes>
+    </test>
+</suite>

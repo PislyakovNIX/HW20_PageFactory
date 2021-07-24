@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -14,6 +15,11 @@ import java.util.concurrent.TimeUnit;
 public class DemoQaShopTests {
 
     private WebDriver driver;
+
+    @Step("Allure log: {0}")
+    public void allureLog(String message){
+        System.out.println(message);
+    }
 
     @BeforeMethod
     public void driverSetup() {
@@ -42,9 +48,13 @@ public class DemoQaShopTests {
         ArticlePage articlePage = new ArticlePage(driver);
         ErrorPage errorPage = new ErrorPage(driver);
 
+        allureLog("Open web page");
         driver.get("http://shop.demoqa.com/author/lsharm/");
+        allureLog("Click Read More button");
         articlesBylsharmPage.clickReadMoreButton();
+        allureLog("Create comment");
         articlePage.leaveComment();
+        allureLog("Checking message");
         Assert.assertEquals(errorPage.getMessageError(), "Error: You entered an incorrect CAPTCHA answer. Please go back and try again.");
     }
 
