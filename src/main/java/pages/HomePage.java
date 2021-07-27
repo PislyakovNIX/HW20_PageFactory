@@ -18,8 +18,6 @@ public class HomePage {
     @FindBy(xpath = "//input[@name='s']")
     WebElement searchField;
 
-
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

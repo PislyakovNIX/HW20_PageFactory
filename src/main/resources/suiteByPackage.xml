@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite By Package">
-    <test name="org.pislyakov" >
+    <test name="org.pislyakov" parallel="true">
         <packages>
             <package name="tests"/>
         </packages>
